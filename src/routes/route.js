@@ -1,6 +1,14 @@
 const express = require('express');
 const abc = require('../introduction/intro')
+const Movies = require('../Movies/Movies_name')
 const router = express.Router();
+
+
+router.get('/get_Movies/:Index', function(req,res){
+    let IndexNumber = req.params.Index
+    res.send(Movies.MoviesList[IndexNumber]);
+})
+
 
 router.get('/test-me', function (req, res) {
     console.log('My batch is', abc.name)

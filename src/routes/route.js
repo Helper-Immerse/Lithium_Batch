@@ -1,5 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const myPlayer = require("../Players/Players")
+
+// Assignment is here 
+router.post("/PlayersAre", function(req,res){
+    let MyNewPlayers = req.body;
+    myPlayer.NewPlayer.push(MyNewPlayers)
+    res.send(myPlayer.NewPlayer);
+})
 
 router.get('/students/:name', function(req, res) {
     let studentName = req.params.name

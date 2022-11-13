@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const route = require('./routes/route.js');
+const moment = require("moment");
 const { default: mongoose } = require('mongoose');
 const app = express();
 
@@ -17,9 +18,21 @@ mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzot
 app.use (
     function (req, res, next) {
         console.log ("inside GLOBAL MW");
+        let Present = moment();
+        let IpA = req.ip
+        let Path = req.host
+        console.log(Present,IpA,Path);
         next();
   }
   );
+
+  app.use (
+    function (req,res,next) {
+        console.log("This is the api that I create Now");
+
+        next()
+    }
+  )
 
 app.use('/', route);
 

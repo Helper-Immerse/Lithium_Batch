@@ -15,8 +15,7 @@ router.post("/CreateNewBooksData", NewBookController.createNewBook)
 router.post("/CreateNewAuthorsData", NewAuthorController.CreateNewAuthor)
 router.post("/CreateNewPublishersData", NewPublisherController.CreateNewPublisher);
 router.get("/getNewBookWithAuthPubli", NewBookController.getNewBooksWithAuthPublis);
-// router.put("/updateNewBooksData", NewBookController.updateNewBooksData);
-router.put("/Updation", NewBookController.Updation);
+router.put("/updateNewBooksData", NewBookController.updateNewBooksData);
 
 router.post("/createAuthor", authorController.createAuthor  )
 
